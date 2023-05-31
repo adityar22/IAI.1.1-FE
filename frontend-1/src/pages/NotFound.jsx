@@ -1,8 +1,8 @@
-const Auth = () => {
+const NotFound = () => {
     return ( 
         <>
         </>
      );
 }
  
-export default Auth;
+export default NotFound;

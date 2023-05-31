@@ -1,8 +1,8 @@
-const dashboard = () => {
+const Dashboard = () => {
     return (
         <>
         </>
     );
 }
  
-export default dashboard;
+export default Dashboard;
