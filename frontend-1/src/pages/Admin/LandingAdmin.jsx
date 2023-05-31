@@ -1,17 +1,21 @@
 import { Route, Routes } from 'react-router-dom';
 import StudentList from './StudentList';
-import Dashboard from '../dashboard';
 import NotFound from '../NotFound';
+import Dashboard from '../Dashboard'
 
 
 const LandingAdmin = () => {
     return (
         <>
-            <Routes>
-                <Route path='student' element={<StudentList />} />
-                <Route path="/" element={<Dashboard />} />
-                <Route path='*' element={<NotFound />} />
-            </Routes>
+            <div className="max-w-screen flex-row sm:flex">
+                <div className='sm:overflow-y-scroll relative w-screen'>
+                    <Routes>
+                        <Route path='/' element={<StudentList />} />
+                        <Route path="test" element={<Dashboard />} />
+                        <Route path='*' element={<NotFound />} />
+                    </Routes>
+                </div>
+            </div>
         </>
     );
 }
