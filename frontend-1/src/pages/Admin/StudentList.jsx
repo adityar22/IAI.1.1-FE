@@ -1,14 +1,46 @@
+import Pagination from "react-js-pagination";
 import Searchbar from "../../components/public/searchbar";
 
-
 const StudentList = () => {
-    return ( 
+    return (
         <>
-        <div className="justify-center items-center py-20 lg:py-10 px-3 lg:px-28 h-screen" >
-            <Searchbar/>
+            <div className="justify-center items-center py-20 lg:py-10 px-3 lg:px-28 h-screen" >
+                <div className="justify-between sm:justify-between flex-row sm:flex" >
+                    <button
+                        type="button"
+                        className="button p-3 mb-10 sm:mb-12 mr-7 relative"
+
+                    > Tambah Mahasiswa + </button>
+                    <Searchbar />
+                </div>
+
+                <table className="shadow-2xl border-2 border-dark-blue-200 text-center w-full my-6" >
+                    <thead className="bg-dark-blue text-white" >
+                        <tr >
+                            <th className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide" > Nama </th>
+                            <th className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide" > NIM </th>
+                            <th className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide" > Prodi </th>
+                            <th className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide" > Fakultas </th>
+                            <th className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide" > Act </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr key="" className="">
+                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">Nama</td>
+                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">XX/123456/XX/12345</td>
+                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">Teknologi Informasi</td>
+                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">Teknik</td>
+                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">
+                                <p className="cursor-pointer text-orange hover:text-yellow-300">Open</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <Pagination/>
             </div>
         </>
-     );
+    );
 }
- 
+
 export default StudentList;
