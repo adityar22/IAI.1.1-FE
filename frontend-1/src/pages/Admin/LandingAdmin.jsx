@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import StudentList from './StudentList';
 import NotFound from '../NotFound';
-import Dashboard from '../Dashboard'
+import Dashboard from '../dashboard'
 
 
 const LandingAdmin = () => {

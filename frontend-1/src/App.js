@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import logo from './logo.svg';
 import './App.css';
 import LandingAdmin from './pages/Admin/LandingAdmin';
+import Auth from './pages/auth'
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <ToastContainer />
       <BrowserRouter>
         <Routes>
-          <Route exact path="/*" element={<LandingAdmin />} />
+          <Route exact path="/*" element={<Auth />} />
         </Routes>
       </BrowserRouter>
     </>
