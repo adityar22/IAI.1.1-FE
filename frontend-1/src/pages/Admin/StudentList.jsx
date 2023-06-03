@@ -36,8 +36,10 @@ const StudentList = () => {
                         </tr>
                     </tbody>
                 </table>
+                <div className="flex-row">
+                    <Pagination />
+                </div>
 
-                <Pagination/>
             </div>
         </>
     );
