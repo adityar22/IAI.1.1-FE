@@ -6,22 +6,23 @@ import Searchbar from "../../components/public/searchbar";
 import Pagination from "react-js-pagination";
 import ModalAdd from "../../components/studentList/modalAdd";
 import ModalDetail from "../../components/studentList/modalDetail";
+import StudentRow from "../../components/studentList/StudentRow";
 
 const StudentList = () => {
+    const students = [
+        { nama: 'Adit 1', nim: '20/460535/TK/51124', prodi:'Teknologi Informasi', fakultas:'Teknik' },
+        { nama: 'Adit 2', nim: '20/460535/TK/51124', prodi:'Teknologi Informasi', fakultas:'Teknik' },
+        { nama: 'Adit 3', nim: '20/460535/TK/51124', prodi:'Teknologi Informasi', fakultas:'Teknik' },
+    ];
+
     const [add, setAdd] = useState(false)
     const setAddModal =(state)=>{
         setAdd(state)
     }
 
-    const [detail, setDetail] = useState(false)
-    const setDetailModal =(state)=>{
-        setDetail(state)
-    }
-
     return (
         <>
             {add && <ModalAdd setAdd={setAdd}/>}
-            {detail && <ModalDetail setDetail={setDetail}/>}
             <div className="justify-center items-center py-20 lg:py-10 px-3 lg:px-28 h-full" >
                 <div className="mb-12">
                     <h1 className="text-4xl font-bold">Data Mahasiswa</h1>
@@ -46,15 +47,9 @@ const StudentList = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr key="" className="">
-                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">Nama</td>
-                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">XX/123456/XX/12345</td>
-                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">Teknologi Informasi</td>
-                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">Teknik</td>
-                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">
-                                <p className="cursor-pointer text-orange hover:text-yellow-300" onClick={(e)=>setDetailModal(true)} >Open</p>
-                            </td>
-                        </tr>
+                        {students && students.map((student, index)=>(
+                            <StudentRow student={student} index={index} />
+                        ))}
                     </tbody>
                 </table>
                 <div className="flex-row">
