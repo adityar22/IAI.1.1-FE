@@ -2,7 +2,7 @@ import { useState } from "react"
 import ModalDelete from "./modalDelete"
 import { Link } from "react-router-dom"
 
-const ModalDetail = ({ setDetail }) => {
+const ModalDetail = ({ student, setDetail }) => {
     const [editMode, setEditMode] = useState(false)
     const setEditView=(state)=>{
         setEditMode(state)
@@ -15,10 +15,10 @@ const ModalDetail = ({ setDetail }) => {
 
     const [account, setAccount]=useState(false)
 
-    const [name, setName] = useState("")
-    const [nim, setNIM] = useState("")
-    const [prodi, setProdi] = useState("")
-    const [fakultas, setFakultas] = useState("")
+    const [name, setName] = useState(student.nama)
+    const [nim, setNIM] = useState(student.nim)
+    const [prodi, setProdi] = useState(student.prodi)
+    const [fakultas, setFakultas] = useState(student.fakultas)
     const [gmail, setGmail] = useState("")
 
     const handleClose = (state) => {
@@ -30,11 +30,11 @@ const ModalDetail = ({ setDetail }) => {
             {deleteModal && <ModalDelete setPopUp={setDeleteView} />}
             <div className="overlay z-20"></div>
             <div className="container w-fit mx-auto absolute z-30 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hover:scale-105 transition-all duration-700">
-                <div className="w-screen max-w-xl mx-8 bg-white shadow-xl rounded-3xl px-8 pt-6 pb-8 mb-4">
+                <div className="flex flex-col justify-start text-left w-screen max-w-xl mx-8 bg-white shadow-xl rounded-3xl px-8 pt-6 pb-8 mb-4">
                     <div className="flex justify-end">
                         <button className="" onClick={(e) => handleClose(false)} >x</button>
                     </div>
-                    <h3 className="text-center text-2xl font -bold mb-12">Detail Data Mahasiswa</h3>
+                    <h3 className="text-2xl font -bold mb-12">Detail Data Mahasiswa</h3>
                     {editMode ?
                         <>
                             <div className="mb-4">
@@ -104,19 +104,19 @@ const ModalDetail = ({ setDetail }) => {
                         <>
                             <div className="mb-4">
                                 <label className="">Nama : </label>
-                                <label className="">Nama Mahasiswa</label>
+                                <label className="">{student.nama}</label>
                             </div>
                             <div className="mb-4">
                                 <label className="">NIM : </label>
-                                <label className="">XX/123456/XX/12345</label>
+                                <label className="">{student.nim}</label>
                             </div>
                             <div className="mb-4">
                                 <label className="">Prodi : </label>
-                                <label className="">Teknologi Informasi</label>
+                                <label className="">{student.prodi}</label>
                             </div>
                             <div className="mb-4">
                                 <label className="">Fakultas : </label>
-                                <label className="">Teknik</label>
+                                <label className="">{student.fakultas}</label>
                             </div>
 
                             <div className="mb-4 mt-12">

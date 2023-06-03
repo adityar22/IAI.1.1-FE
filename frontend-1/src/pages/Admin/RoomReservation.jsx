@@ -2,6 +2,12 @@ import React from "react";
 import Searchbar from "../../components/public/searchbar";
 
 const RoomReservation = () => {
+    const reservations = [
+        { title: 'Book 1', author: 'Author 1', publisher:'Publisher 1', synopsis:'lorem ipsum sir dolor amet', isFiction:true, numOfBooks:5, genres:['gen1','gen2', 'gen3'], cover: 'book1.jpg' },
+        { title: 'Book 2', author: 'Author 2', publisher:'Publisher 2', synopsis:'lorem ipsum sir dolor amet', isFiction:true, numOfBooks:8, genres:['gen1','gen2', 'gen3'], cover: 'book2.jpg' },
+        { title: 'Book 3', author: 'Author 3', publisher:'Publisher 3', synopsis:'lorem ipsum sir dolor amet', isFiction:true, numOfBooks:11, genres:['gen1','gen2', 'gen3'], cover: 'book3.jpg' },
+    ];
+    
     return (
         <>
             <div className="justify-center items-center py-20 lg:py-10 px-3 lg:px-28 h-full" >
