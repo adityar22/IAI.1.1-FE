@@ -7,6 +7,7 @@ import BookHistori from './BookHistori';
 import RoomHistory from './RoomHistory';
 
 import ClientNav from '../../components/public/clientNav';
+import Dashboard from '../Dashboard';
 
 const LandingStudent = () => {
     return (
@@ -16,8 +17,8 @@ const LandingStudent = () => {
                 <div className="max-w-screen flex-row sm:flex">
                     <div className='w-screen'>
                         <Routes>
-                            <Route path='/' element={<StudentProfile />} />
-                            <Route path="/profile" element={<StudentProfile />} />
+                            <Route path='/' element={<Dashboard />} />
+                            <Route path="/profil" element={<StudentProfile />} />
                             <Route path="/book/rent" element={<BookBooking />} />
                             <Route path="/book/history" element={<BookHistori />} />
                             <Route path="/reservation/new" element={<RoomBooking />} />
