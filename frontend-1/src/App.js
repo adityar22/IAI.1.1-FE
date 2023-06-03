@@ -5,14 +5,24 @@ import 'react-toastify/dist/ReactToastify.css';
 import logo from './logo.svg';
 import './App.css';
 import LandingAdmin from './pages/Admin/LandingAdmin';
+import LandingStudent from './pages/Student/LandingStudent';
+import { useState } from 'react';
+import Auth from './pages/Auth';
 
 function App() {
+  const [isAdmin, setIsAdmin] = useState(true)
+  const [isLogin, setIsLogin] = useState(true)
+
   return (
     <>
       <ToastContainer />
       <BrowserRouter>
         <Routes>
-          <Route exact path="/*" element={<LandingAdmin />} />
+          {isLogin? 
+            <Route exact path="/*" element={isAdmin ? <LandingAdmin /> : <LandingStudent/>} />
+            :
+            <Route exact path="/*" element={<Auth />} />
+          }
         </Routes>
       </BrowserRouter>
     </>

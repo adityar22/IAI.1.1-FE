@@ -1,22 +1,32 @@
 import { Route, Routes } from 'react-router-dom';
+import Navbar from '../../components/public/navbar';
 import StudentList from './StudentList';
 import NotFound from '../NotFound';
 import Dashboard from '../Dashboard'
+import RoomReservation from './RoomReservation';
+import RoomList from './RoomList';
+import BookReservation from './BookReservation';
+import BookList from './BookList';
 
 
 const LandingAdmin = () => {
     return (
-        <>
+        <div className="max-h-screen">
+            <Navbar />
             <div className="max-w-screen flex-row sm:flex">
-                <div className='sm:overflow-y-scroll relative w-screen'>
+                <div className='w-screen'>
                     <Routes>
-                        <Route path='/' element={<StudentList />} />
-                        <Route path="test" element={<Dashboard />} />
+                        <Route path='/admin' element={<Dashboard />} />
+                        <Route path='/admin/student' element={<StudentList />} />
+                        <Route path="/admin/room" element={<RoomList />} />
+                        <Route path="/admin/reservation" element={<RoomReservation />} />
+                        <Route path="/admin/book" element={<BookList />} />
+                        <Route path="/admin/rent" element={<BookReservation />} />
                         <Route path='*' element={<NotFound />} />
                     </Routes>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

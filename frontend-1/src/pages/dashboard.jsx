@@ -1,6 +1,7 @@
 const Dashboard = () => {
     return (
         <>
+        <p>Ini Dashboard</p>
         </>
     );
 }
