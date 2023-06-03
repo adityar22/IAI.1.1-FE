@@ -11,7 +11,7 @@ import Auth from './pages/Auth';
 
 function App() {
   const [isAdmin, setIsAdmin] = useState(true)
-  const [isLogin, setIsLogin] = useState(true)
+  const [isLogin, setIsLogin] = useState(false)
 
   return (
     <>
