@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const RoomBooking = () => {
     const rules = [
@@ -122,8 +123,9 @@ const RoomBooking = () => {
                             </div>
                         </div>
                     </form>
-                    <div className="flex justify-center">
-                        <button className="h-fit w-fit bg-[#F4C522] text-white font py-2 px-4 flex rounded">
+                    <div className="flex justify-end mx-4 gap-4 items-center">
+                        <Link className="text-sm text-blue-700 font-bold cursor-pointer" to="/reservation/history">Lihat Riwayat Reservasi</Link>
+                        <button className="h-fit w-fit bg-orange text-white font py-2 px-4 flex rounded">
                             Book Now
                         </button>
                     </div>

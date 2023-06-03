@@ -7,7 +7,7 @@ export default function Navbar() {
         <>
             <div className="top-0 sticky flex flex-row justify-between w-full h-12 bg-dark-blue z-50 py-2 px-32">
                 <div>
-                    <p className="text-h-lg font-bold text-white">App Name</p>
+                    <Link className="text-h-lg font-bold text-white cursor-pointer" to="/">App Name</Link>
                 </div>
                 <div>
                     <ul className="flex flex-row gap-6 text-white font-semibold">

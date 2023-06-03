@@ -1,14 +1,19 @@
 import React from "react";
 import Searchbar from "../../components/public/searchbar";
+import { Link } from "react-router-dom";
 
 const RoomHistory = () => {
-    return ( 
+    return (
         <>
             <div className="justify-center items-center py-20 lg:py-10 px-3 lg:px-28 h-full" >
                 <div className="mb-12">
                     <h1 className="text-4xl font-bold">Histori Reservasi Ruangan</h1>
                 </div>
-                <div className="justify-between sm:justify-end flex-row sm:flex mb-6" >
+                <div className="justify-between sm:justify-between flex-row sm:flex" >
+                    <Link
+                        className="button p-3 mt-2 mb-10 sm:mb-12 mr-7 relative bg-orange text-white font-bold"
+                        to="/reservation/new"
+                    > Buat Reservasi + </Link>
                     <Searchbar />
                 </div>
 
@@ -42,7 +47,7 @@ const RoomHistory = () => {
 
             </div>
         </>
-     );
+    );
 }
- 
+
 export default RoomHistory;
