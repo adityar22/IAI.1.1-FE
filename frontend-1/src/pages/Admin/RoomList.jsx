@@ -13,7 +13,7 @@ const RoomList = () => {
             type="button"
             className="button p-3 mt-2 mb-10 sm:mb-12 mr-7 relative bg-orange text-white font-bold"
 
-          > Tambah Mahasiswa + </button>
+          > Tambah Ruangan + </button>
           <Searchbar />
         </div>
 
