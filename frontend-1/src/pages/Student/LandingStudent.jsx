@@ -17,7 +17,7 @@ const LandingStudent = () => {
                     <div className='w-screen'>
                         <Routes>
                             <Route path='/' element={<StudentProfile />} />
-                            <Route path="/profile" element={<StudentProfile />} />
+                            <Route path="/profil" element={<StudentProfile />} />
                             <Route path="/book/rent" element={<BookBooking />} />
                             <Route path="/book/history" element={<BookHistori />} />
                             <Route path="/reservation/new" element={<RoomBooking />} />

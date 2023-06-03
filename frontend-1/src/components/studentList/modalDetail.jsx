@@ -1,5 +1,6 @@
 import { useState } from "react"
 import ModalDelete from "./modalDelete"
+import { Link } from "react-router-dom"
 
 const ModalDetail = ({ setDetail }) => {
     const [editMode, setEditMode] = useState(false)
@@ -126,7 +127,7 @@ const ModalDetail = ({ setDetail }) => {
                                     <button
                                         className="p-2 bg-blue-600 text-white"
                                     >
-                                        Buat Akun
+                                        <Link to="/admin/regist">Buat Akun</Link>
                                     </button>
                                 }
                                 
