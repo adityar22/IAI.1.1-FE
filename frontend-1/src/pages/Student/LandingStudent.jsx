@@ -3,6 +3,8 @@ import StudentProfile from './StudentProfile';
 import RoomBooking from './RoomBooking';
 import BookBooking from './BookBooking';
 import NotFound from '../NotFound';
+import BookHistori from './BookHistori';
+import RoomHistory from './RoomHistory';
 
 import ClientNav from '../../components/public/clientNav';
 
@@ -16,8 +18,10 @@ const LandingStudent = () => {
                         <Routes>
                             <Route path='/' element={<StudentProfile />} />
                             <Route path="/profile" element={<StudentProfile />} />
-                            <Route path="/book" element={<BookBooking />} />
-                            <Route path="/room" element={<RoomBooking />} />
+                            <Route path="/book/rent" element={<BookBooking />} />
+                            <Route path="/book/history" element={<BookHistori />} />
+                            <Route path="/reservation/new" element={<RoomBooking />} />
+                            <Route path="/reservation/history" element={<RoomHistory />} />
                             <Route path='*' element={<NotFound />} />
                         </Routes>
                     </div>
