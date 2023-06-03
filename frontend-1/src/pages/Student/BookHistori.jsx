@@ -1,5 +1,6 @@
 import React from "react";
 import Searchbar from "../../components/public/searchbar";
+import { Link } from "react-router-dom";
 
 const BookHistori = () => {
     return (
@@ -8,7 +9,8 @@ const BookHistori = () => {
                 <div className="mb-12">
                     <h1 className="text-4xl font-bold">Histori Peminjaman Buku</h1>
                 </div>
-                <div className="justify-between sm:justify-end flex-row sm:flex mb-6" >
+                <div className="justify-between sm:justify-between flex-row sm:flex items-center mb-2">
+                    <Link className="text-sm text-blue-700 font-bold cursor-pointer" to="/book/rent">Cari Buku</Link>
                     <Searchbar />
                 </div>
 
