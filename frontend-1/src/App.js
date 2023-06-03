@@ -10,8 +10,8 @@ import { useState } from 'react';
 import Auth from './pages/Auth';
 
 function App() {
-  const [isAdmin, setIsAdmin] = useState(true)
-  const [isLogin, setIsLogin] = useState(false)
+  const [isAdmin, setIsAdmin] = useState(false)
+  const [isLogin, setIsLogin] = useState(true)
 
   return (
     <>
