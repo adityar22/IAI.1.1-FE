@@ -5,6 +5,7 @@ import lock from '../assets/logo_lock.png'
 const Auth = () => {
     return (
         <>
+            {/* login section */}
             <section className=' body-font w-screen h-screen text-black flex items-center'>
                 <div className='container px-5 py-24 mx-auto flex flex-col items-center'>
                     {/* Judul Aplikasi */}
