@@ -5,6 +5,7 @@ const ModalAdd = ({setAdd}) => {
     const [nim, setNIM] = useState("")
     const [prodi, setProdi] = useState("")
     const [fakultas, setFakultas] = useState("")
+    const [email, setEmail] = useState("");
 
     const handleClose =(state)=>{
         setAdd(state)
@@ -65,6 +66,18 @@ const ModalAdd = ({setAdd}) => {
                             placeholder="Fakultas mahasiswa"
                             onChange={(e) => setFakultas(e.target.value)}
                             value={fakultas}
+                        />
+                    </div>
+                    <div className="mb-4 mt-4">
+                        {email != "" && <label className="">Email : </label>}
+                        <input
+                            required
+                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            id="email"
+                            type="text"
+                            placeholder="Email mahasiswa"
+                            onChange={(e) => setEmail(e.target.value)}
+                            value={email}
                         />
                     </div>
                     <div className="flex justify-end">

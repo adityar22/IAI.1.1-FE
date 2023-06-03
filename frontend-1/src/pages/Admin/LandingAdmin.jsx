@@ -7,6 +7,7 @@ import RoomReservation from './RoomReservation';
 import RoomList from './RoomList';
 import BookReservation from './BookReservation';
 import BookList from './BookList';
+import RegistStudentAcc from './RegistStudentAcc';
 
 
 const LandingAdmin = () => {
@@ -22,6 +23,7 @@ const LandingAdmin = () => {
                         <Route path="/admin/reservation" element={<RoomReservation />} />
                         <Route path="/admin/book" element={<BookList />} />
                         <Route path="/admin/rent" element={<BookReservation />} />
+                        <Route path="/admin/regist" element={<RegistStudentAcc />} />
                         <Route path='*' element={<NotFound />} />
                     </Routes>
                 </div>
