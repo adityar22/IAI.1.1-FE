@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Searchbar from "../../components/public/searchbar"
+import BookDisplayAdm from "../../components/book/BookDisplayAdm";
+import AddBook from "../../components/book/AddBook";
 
 const BookList = () => {
+    const books = [
+        { title: 'Book 1', author: 'Author 1', publisher: 'Publisher 1', synopsis: 'lorem ipsum sir dolor amet', isFiction: "true", numOfBooks: 5, genres: ['gen1', 'gen2', 'gen3'], cover: 'book1.jpg' },
+        { title: 'Book 2', author: 'Author 2', publisher: 'Publisher 2', synopsis: 'lorem ipsum sir dolor amet', isFiction: "true", numOfBooks: 8, genres: ['gen1', 'gen2', 'gen3'], cover: 'book2.jpg' },
+        { title: 'Book 3', author: 'Author 3', publisher: 'Publisher 3', synopsis: 'lorem ipsum sir dolor amet', isFiction: "true", numOfBooks: 11, genres: ['gen1', 'gen2', 'gen3'], cover: 'book3.jpg' },
+    ];
+
+    const [addModal, setAddModal] = useState(false)
+    const viewAdd = (state) => {
+        setAddModal(state)
+    }
+
     return (
         <>
+            {addModal && <AddBook setAdd={viewAdd} />}
             <div className="justify-center items-center py-20 lg:py-10 px-3 lg:px-28 h-full" >
                 <div className="mb-12">
                     <h1 className="text-4xl font-bold">Data Buku</h1>
@@ -12,33 +26,16 @@ const BookList = () => {
                     <button
                         type="button"
                         className="button p-3 mt-2 mb-10 sm:mb-12 mr-7 relative bg-orange text-white font-bold"
-
+                        onClick={(e)=>{viewAdd(true)}}
                     > Tambah Buku + </button>
                     <Searchbar />
                 </div>
+                <div className="flex gap-4">
+                    {books && books.map((book, index) => (
+                        <BookDisplayAdm book={book} index={index} />
+                    ))}
+                </div>
 
-                <table className="shadow-2xl border-2 border-dark-blue-200 text-center w-full" >
-                    <thead className="bg-dark-blue text-white" >
-                        <tr >
-                            <th className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide" > Nama </th>
-                            <th className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide" > NIM </th>
-                            <th className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide" > Prodi </th>
-                            <th className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide" > Fakultas </th>
-                            <th className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide" > Act </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr key="" className="">
-                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">Nama</td>
-                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">XX/123456/XX/12345</td>
-                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">Teknologi Informasi</td>
-                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">Teknik</td>
-                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">
-                                <p className="cursor-pointer text-orange hover:text-yellow-300">Open</p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
                 <div className="flex-row">
 
                 </div>

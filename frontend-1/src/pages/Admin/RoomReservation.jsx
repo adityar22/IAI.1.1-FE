@@ -1,11 +1,12 @@
 import React from "react";
 import Searchbar from "../../components/public/searchbar";
+import ReservationList from "../../components/room/ReservationList";
 
 const RoomReservation = () => {
     const reservations = [
-        { title: 'Book 1', author: 'Author 1', publisher:'Publisher 1', synopsis:'lorem ipsum sir dolor amet', isFiction:true, numOfBooks:5, genres:['gen1','gen2', 'gen3'], cover: 'book1.jpg' },
-        { title: 'Book 2', author: 'Author 2', publisher:'Publisher 2', synopsis:'lorem ipsum sir dolor amet', isFiction:true, numOfBooks:8, genres:['gen1','gen2', 'gen3'], cover: 'book2.jpg' },
-        { title: 'Book 3', author: 'Author 3', publisher:'Publisher 3', synopsis:'lorem ipsum sir dolor amet', isFiction:true, numOfBooks:11, genres:['gen1','gen2', 'gen3'], cover: 'book3.jpg' },
+        { kode: 'xx-123-abc-123', lokasi: 'Ruang A', peminjam:'si A', tanggal:'20/05/2023' },
+        { kode: 'xx-124-abc-125', lokasi: 'Ruang B', peminjam:'si B', tanggal:'21/05/2023' },
+        { kode: 'xx-126-abc-126', lokasi: 'Ruang A', peminjam:'si C', tanggal:'21/05/2023' },
     ];
     
     return (
@@ -30,16 +31,9 @@ const RoomReservation = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr key="" className="">
-                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">1</td>
-                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">XX-123456-XX-12345</td>
-                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">Teknologi Informasi</td>
-                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">Aditya</td>
-                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">20/05/2023</td>
-                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">
-                                <p className="cursor-pointer text-orange hover:text-yellow-300">Open</p>
-                            </td>
-                        </tr>
+                        {reservations && reservations.map((rsv, index)=>(
+                            <ReservationList rsv={rsv} index={index} />
+                        ))}
                     </tbody>
                 </table>
                 <div className="flex-row">
