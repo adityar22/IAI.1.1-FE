@@ -1,4 +1,4 @@
-import { DisplayContext } from "../context/DisplayContext"
+import { DisplayContext } from "../contexts/DisplayContext"
 import { useContext } from "react"
 
 export const useDisplayContext = () => {
