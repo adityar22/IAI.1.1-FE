@@ -10,6 +10,7 @@ const StudentProfile = () => {
     const [email, setEmail] = useState("adityaramadhan01@mail.ugm.ac.id")
 
     const [password, setPassword] = useState("")
+    const [newPass, setNewPass] = useState("")
     const [confirm, setConfirm] = useState("")
 
     const [manage, setManage] = useState(false);
@@ -64,24 +65,39 @@ const StudentProfile = () => {
                         {manage &&
                             <div>
                                 <div className='bg-gray-200 rounded-lg py-8 px-8 flex flex-col'>
-                                    <div className="mt-3">
+                                    <div className="mt-3 mb-6">
                                         <p>Email :</p>
                                         <p>{email}</p>
                                     </div>
                                     <div className="mt-3">
-                                        {password != "" && <label className="">Password : </label>}
+                                        <p>Konfigurasi Password :</p>
+                                    </div>
+                                    <div className="mt-3 mb-6">
+                                        {password != "" && <label className="">Old Password : </label>}
                                         <input
                                             required
                                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                             id="password"
                                             type="password"
-                                            placeholder="Password..."
+                                            placeholder="Old Password..."
                                             onChange={(e) => setPassword(e.target.value)}
                                             value={password}
                                         />
                                     </div>
                                     <div className="mt-3">
-                                        {confirm != "" && <label className="">Konformasi Password : </label>}
+                                        {newPass != "" && <label className="">New Password : </label>}
+                                        <input
+                                            required
+                                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                            id="newPass"
+                                            type="password"
+                                            placeholder="New Password"
+                                            onChange={(e) => setNewPass(e.target.value)}
+                                            value={newPass}
+                                        />
+                                    </div>
+                                    <div className="mt-3">
+                                        {confirm != "" && <label className="">Konfirmasi Password : </label>}
                                         <input
                                             required
                                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
