@@ -1,13 +1,15 @@
 import {useEffect} from "react"
+import { useAuthContext } from "./auth/useAuthContext";
 
 const useFetch = ({url, type, dispatch, setError, setLoading, })=>{
+    const {user} = useAuthContext();
     useEffect(()=>{
         setLoading(true);
         const getData =  async()=>{
             try{
                 const response = await fetch(url,{
                     headers:{
-
+                        'Authorization': `Bearer ${user.accessToken}`
                     }
                 });
                 const json = await response.json();

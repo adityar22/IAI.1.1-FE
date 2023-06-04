@@ -1,7 +1,11 @@
 import { useState } from "react"
+import { useHandleStudentAdd } from "../../hooks/student/useHandleStudentAdd"
+import { useStudentContext } from "../../hooks/student/useStudentContext"
 
-const ModalAdd = ({setAdd}) => {
-    const [name, setName] = useState("")
+const ModalAdd = ({setAdd, url, setLoading, setError}) => {
+    const {dispatch} = useStudentContext();
+
+    const [nama, setNama] = useState("")
     const [nim, setNIM] = useState("")
     const [prodi, setProdi] = useState("")
     const [fakultas, setFakultas] = useState("")
@@ -11,25 +15,28 @@ const ModalAdd = ({setAdd}) => {
         setAdd(state)
     }
 
+    const newStudent = {nama, nim, prodi, fakultas, email}
+    const {handeAdd: handelSubmit} = useHandleStudentAdd({url, type:'ADD_STUDENT', dispatch, data:newStudent, setLoading, setError, closeAddPopup: handleClose})
+
     return (
         <>
             <div className="overlay z-20"></div>
             <div className="container w-fit mx-auto absolute z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hover:scale-105 transition-all duration-700">
-                <form className="w-screen max-w-xl mx-8 bg-white shadow-xl rounded-3xl px-8 pt-6 pb-8 mb-4">
+                <div className="w-screen max-w-xl mx-8 bg-white shadow-xl rounded-3xl px-8 pt-6 pb-8 mb-4">
                     <div className="flex justify-end">
                         <button className="" onClick={(e)=>handleClose(false)} >x</button>
                     </div>
                     <h3 className="text-center text-2xl font -bold mb-12">Tambah Mahasiswa</h3>
                     <div className="mb-4">
-                        {name != "" && <label className="">Nama : </label>}
+                        {nama != "" && <label className="">Nama : </label>}
                         <input
                             required
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             id="name"
                             type="text"
                             placeholder="Nama mahasiswa"
-                            onChange={(e) => setName(e.target.value)}
-                            value={name}
+                            onChange={(e) => setNama(e.target.value)}
+                            value={nama}
                         />
                     </div>
                     <div className="mb-4">
@@ -74,7 +81,7 @@ const ModalAdd = ({setAdd}) => {
                             required
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             id="email"
-                            type="text"
+                            type="email"
                             placeholder="Email mahasiswa"
                             onChange={(e) => setEmail(e.target.value)}
                             value={email}
@@ -84,11 +91,12 @@ const ModalAdd = ({setAdd}) => {
                         <button
                             type="submit"
                             className="bg-orange mt-3 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus :outline-none focus:shadow-outline"
+                            onClick={handelSubmit}
                         >
                             Submit
                         </button>
                     </div>
-                </form>
+                </div>
             </div>
         </>
     );

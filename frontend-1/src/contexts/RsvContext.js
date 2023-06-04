@@ -1,6 +1,6 @@
 import { createContext, useReducer } from "react";
 
-export const rsvContext = createContext();
+export const RsvContext = createContext();
 
 export const rsvReducer = (state, action) => {
     switch(action.type){

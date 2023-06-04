@@ -2,19 +2,25 @@ import { useState } from "react";
 import useFetch from "../../hooks/useFetch";
 
 import { useStudentContext } from "../../hooks/student/useStudentContext";
+import {useDisplayContext} from "../../hooks/useDisplayContext";
 
 import Searchbar from "../../components/public/searchbar";
 import Pagination from "react-js-pagination";
 import ModalAdd from "../../components/studentList/modalAdd";
-import ModalDetail from "../../components/studentList/modalDetail";
 import StudentRow from "../../components/studentList/StudentRow";
 
 const StudentList = () => {
-    const students = [
-        { nama: 'Adit 1', nim: '20/460535/TK/51124', prodi:'Teknologi Informasi', fakultas:'Teknik' },
-        { nama: 'Adit 2', nim: '20/460535/TK/51124', prodi:'Teknologi Informasi', fakultas:'Teknik' },
-        { nama: 'Adit 3', nim: '20/460535/TK/51124', prodi:'Teknologi Informasi', fakultas:'Teknik' },
-    ];
+    // const students = [
+    //     { nama: 'Adit 1', nim: '20/460535/TK/51124', prodi:'Teknologi Informasi', fakultas:'Teknik' },
+    //     { nama: 'Adit 2', nim: '20/460535/TK/51124', prodi:'Teknologi Informasi', fakultas:'Teknik' },
+    //     { nama: 'Adit 3', nim: '20/460535/TK/51124', prodi:'Teknologi Informasi', fakultas:'Teknik' },
+    // ];
+
+    const {students, dispatch} = useStudentContext();
+    const { notify, isPending, error, setLoading, setError } = useDisplayContext();
+    const url = 'http://localhost:5000/students';
+    useFetch({ url, dispatch, setError, setLoading, type: 'GET_STUDENT' });
+    console.log(students)
 
     const [add, setAdd] = useState(false)
     const setAddModal =(state)=>{
@@ -23,7 +29,7 @@ const StudentList = () => {
 
     return (
         <>
-            {add && <ModalAdd setAdd={setAdd}/>}
+            {add && <ModalAdd setAdd={setAdd} url={url} setLoading={setLoading} setError={setError} />}
             <div className="justify-center items-center py-20 lg:py-10 px-3 lg:px-28 h-full" >
                 <div className="mb-12">
                     <h1 className="text-4xl font-bold">Data Mahasiswa</h1>
@@ -48,7 +54,7 @@ const StudentList = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {students && students.map((student, index)=>(
+                        {students && students.students.map((student, index)=>(
                             <StudentRow student={student} index={index} />
                         ))}
                     </tbody>
