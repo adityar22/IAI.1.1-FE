@@ -4,9 +4,9 @@ import RentList from "../../components/book/RentList";
 
 const BookReservation = () => {
     const rents = [
-        { kode: 'xx-123-abc-123', judul: 'Buku A', peminjam:'si A', deadline:'20/05/2023', status:'dipinjam' },
-        { kode: 'xx-124-abc-124', judul: 'Buku B', peminjam:'si B', deadline:'21/05/2023', status:'terlambat' },
-        { kode: 'xx-125-abc-125', judul: 'Buku C', peminjam:'si C', deadline:'21/05/2023', status:'dikembalikan' },
+        { kode: 'xx-123-abc-123', judul: 'Buku A', peminjam:'si A', tanggal:'13/05/2023', deadline:'20/05/2023', status:'dipinjam' },
+        { kode: 'xx-124-abc-124', judul: 'Buku B', peminjam:'si B', tanggal:'14/05/2023', deadline:'21/05/2023', status:'terlambat' },
+        { kode: 'xx-125-abc-125', judul: 'Buku C', peminjam:'si C', tanggal:'14/05/2023', deadline:'21/05/2023', status:'dikembalikan' },
     ];
 
     return (
