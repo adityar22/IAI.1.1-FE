@@ -7,7 +7,7 @@ export default function ClientNav() {
         <>
             <div className="top-0 sticky flex flex-row justify-between w-full h-12 bg-dark-blue z-50 py-2 px-32">
                 <div>
-                    <Link className="text-h-lg font-bold text-white cursor-pointer" to="/">App Name</Link>
+                    <Link className="text-h-lg font-bold text-white cursor-pointer" to="/">Simaster</Link>
                 </div>
                 <div>
                     <ul className="flex flex-row gap-6 text-white font-semibold">
