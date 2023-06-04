@@ -4,16 +4,16 @@ import { Link } from "react-router-dom"
 
 const ModalDetail = ({ student, setDetail }) => {
     const [editMode, setEditMode] = useState(false)
-    const setEditView=(state)=>{
+    const setEditView = (state) => {
         setEditMode(state)
     }
 
-    const[deleteModal, setDeleteModal] = useState(false)
-    const setDeleteView=(state)=>{
+    const [deleteModal, setDeleteModal] = useState(false)
+    const setDeleteView = (state) => {
         setDeleteModal(state)
     }
 
-    const [account, setAccount]=useState(false)
+    const [account, setAccount] = useState(false)
 
     const [name, setName] = useState(student.nama)
     const [nim, setNIM] = useState(student.nim)
@@ -88,7 +88,7 @@ const ModalDetail = ({ student, setDetail }) => {
                             <div className="flex justify-end">
                                 <button
                                     className="bg-white mt-3 hover:bg-red-600 hover:text-white text-red-600 border-red-600 font-bold py-2 px-4 rounded focus :outline-none focus:shadow-outline"
-                                    onClick={(e)=>setEditView(false)}
+                                    onClick={(e) => setEditView(false)}
                                 >
                                     Batal
                                 </button>
@@ -121,7 +121,7 @@ const ModalDetail = ({ student, setDetail }) => {
 
                             <div className="mb-4 mt-12">
                                 <label className="">Akun : </label>
-                                {gmail!==""?
+                                {gmail !== "" ?
                                     <label className="">{gmail}</label>
                                     :
                                     <button
@@ -130,18 +130,18 @@ const ModalDetail = ({ student, setDetail }) => {
                                         <Link to="/admin/regist">Buat Akun</Link>
                                     </button>
                                 }
-                                
+
                             </div>
                             <div className="flex justify-end gap-4">
-                            <button
+                                <button
                                     className="bg-white mt-3 hover:bg-red-600 hover:text-white text-red-600 border-red-600 font-bold py-2 px-4 rounded focus :outline-none focus:shadow-outline"
-                                    onClick={(e)=>{setDeleteView(true)}}
+                                    onClick={(e) => { setDeleteView(true) }}
                                 >
                                     Hapus
                                 </button>
                                 <button
                                     className="bg-orange mt-3 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus :outline-none focus:shadow-outline"
-                                    onClick={(e)=>setEditView(true)}
+                                    onClick={(e) => setEditView(true)}
                                 >
                                     Edit
                                 </button>
