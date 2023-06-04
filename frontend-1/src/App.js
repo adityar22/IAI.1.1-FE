@@ -10,7 +10,7 @@ import { useState } from 'react';
 import Auth from './pages/Auth';
 
 function App() {
-  const [isAdmin, setIsAdmin] = useState(false)
+  const [role, setRole] = useState("STUDENT")
   const [isLogin, setIsLogin] = useState(true)
 
   return (
@@ -19,7 +19,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           {isLogin? 
-            <Route exact path="/*" element={isAdmin ? <LandingAdmin /> : <LandingStudent/>} />
+            <Route exact path="/*" element={role=="ADMIN" ? <LandingAdmin /> : <LandingStudent/>} />
             :
             <Route exact path="/*" element={<Auth />} />
           }
