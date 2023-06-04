@@ -1,7 +1,14 @@
 import React from "react";
 import Searchbar from "../../components/public/searchbar";
+import ReservationList from "../../components/room/ReservationList";
 
 const RoomReservation = () => {
+    const reservations = [
+        { kode: 'xx-123-abc-123', lokasi: 'Ruang A', peminjam:'si A', tanggal:'20/05/2023' },
+        { kode: 'xx-124-abc-125', lokasi: 'Ruang B', peminjam:'si B', tanggal:'21/05/2023' },
+        { kode: 'xx-126-abc-126', lokasi: 'Ruang A', peminjam:'si C', tanggal:'21/05/2023' },
+    ];
+    
     return (
         <>
             <div className="justify-center items-center py-20 lg:py-10 px-3 lg:px-28 h-full" >
@@ -24,16 +31,9 @@ const RoomReservation = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr key="" className="">
-                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">1</td>
-                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">XX-123456-XX-12345</td>
-                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">Teknologi Informasi</td>
-                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">Aditya</td>
-                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">20/05/2023</td>
-                            <td className="py-3 bg-white-800 p-3 text-sm font-semibold tracking-wide">
-                                <p className="cursor-pointer text-orange hover:text-yellow-300">Open</p>
-                            </td>
-                        </tr>
+                        {reservations && reservations.map((rsv, index)=>(
+                            <ReservationList rsv={rsv} index={index} />
+                        ))}
                     </tbody>
                 </table>
                 <div className="flex-row">

@@ -17,7 +17,7 @@ const LandingAdmin = () => {
             <div className="max-w-screen flex-row sm:flex">
                 <div className='w-screen'>
                     <Routes>
-                        <Route path='/admin' element={<Dashboard />} />
+                        <Route path='/' element={<Dashboard />} />
                         <Route path='/admin/student' element={<StudentList />} />
                         <Route path="/admin/room" element={<RoomList />} />
                         <Route path="/admin/reservation" element={<RoomReservation />} />
