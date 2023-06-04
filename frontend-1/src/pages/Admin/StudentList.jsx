@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useFetch from "../../hooks/useFetch";
-import { useStudentContext } from "../../hooks/useStudentContext";
+
+import { useStudentContext } from "../../hooks/student/useStudentContext";
 
 import Searchbar from "../../components/public/searchbar";
 import Pagination from "react-js-pagination";

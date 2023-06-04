@@ -23,7 +23,7 @@ const RegistStudentAcc = ({ student }) => {
                             <div className='flex flex-col text-gray-700 mb-3'>
                                 {user!="" && <label className='mb-1 text-lg '>Username</label>}
                                 <div className='flex flex-row '>
-                                    <div className=' bg-gray-800 rounded-l-xl px-1 py-1 h-11 w-12'>
+                                    <div className=' bg-blue-100 rounded-l-xl px-1 py-1 h-11 w-12'>
                                         <img src={username} className=' h-6 w-6 mx-auto my-2'>
                                         </img>
                                     </div>
@@ -39,7 +39,7 @@ const RegistStudentAcc = ({ student }) => {
                             <div className='flex flex-col text-gray-700 mb-3 text-base'>
                                 {password!="" && <label className='mb-1 text-lg'>Password</label>}
                                 <div className='flex flex-row'>
-                                    <div className=' bg-gray-800 rounded-l-xl px-1 py-1 h-11 w-12 '>
+                                    <div className=' bg-blue-100 rounded-l-xl px-1 py-1 h-11 w-12 '>
                                         <img src={lock} className="h-5 w-5 mx-auto my-2">
                                         </img>
                                     </div>
@@ -54,7 +54,7 @@ const RegistStudentAcc = ({ student }) => {
                             </div>
                             {/* Login Button */}
                             <div className='justify-center text-center flex flex-col'>
-                                <button className='bg-blue-700 text-lg text-white bg-orange-400 rounded-md px-5 py-2 mt-7 mx-auto'>
+                                <button className='bg-orange hover:bg-blue-700 text-lg text-white bg-orange-400 rounded-md px-5 py-2 mt-7 mx-auto'>
                                     Register
                                 </button>
                             </div>
